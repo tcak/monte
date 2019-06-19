@@ -99,9 +99,4 @@ class Particle
         _z = z;
         return this;
     }
-
-    public string positionToJson()
-    {
-        return `[` ~ std.conv.to!string( _x ) ~ `,` ~ std.conv.to!string( _y ) ~ `,` ~ std.conv.to!string( _z ) ~ `]`;
-    }
-}
+ }
