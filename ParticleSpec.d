@@ -1,6 +1,3 @@
-import std.conv;
-import std.json;
-
 class ParticleSpec
 {
 	private double _r;
