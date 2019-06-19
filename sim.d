@@ -15,7 +15,6 @@ import core.stdc.signal;
 import Particle;
 import ParticleSpec;
 import Playground;
-import Output;
 
 bool interruptDetected = false;
 
@@ -35,8 +34,6 @@ class Simulation
     public immutable double RADIUS_OXYGEN = 48;  // O-2
 
     private Playground playground;
-
-    private Output output;
 
     private double C;
     private double r_cut;
@@ -74,8 +71,6 @@ class Simulation
         playground.addParticles( oxygenSpec, totalNumberOfO );
 
         writeln("OK");
-
-        output = new Output( playground );
     }
 
     private double calculateTotalPotential()
@@ -142,10 +137,6 @@ class Simulation
         double maxTotalPotential;
         double allowedMaxTotalPotential;
 
-        output.reset();
-        output.cleanup();
-        output.storePositions();
-
         currentTotalPotential = calculateTotalPotential();
 
         prevTotalPotential = currentTotalPotential;
@@ -201,24 +192,12 @@ class Simulation
                 writeln();
             }
 
-            if( (i % 8) == 0 )
-            {
-                output.storePositions();
-            }
-
             if( minTotalPotential > currentTotalPotential ){ minTotalPotential = currentTotalPotential; }
         }
-
-        output.storeSpec();
-        output.storeParticlesInfo();
 
         writeln("Simulation completed!");
     }
 }
-
-
-
-
 
 void main()
 {
