@@ -17,9 +17,4 @@ class ParticleSpec
     public double r(){ return _r; }
     public double q(){ return _q; }
     public string type(){ return _type; }
-
-    public string toJson()
-    {
-        return `{"r":` ~ std.conv.to!string( _r ) ~ `, "q":` ~ std.conv.to!string( _q ) ~ `, "type": ` ~ std.json.JSONValue( _type ).toString() ~ `}`;
-    }
 }
