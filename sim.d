@@ -159,10 +159,7 @@ class Simulation
 
             //-----
 
-            if( (i % 100) == 0 )
-            {
-                write( i, " / ", c , ": Moving a particle ... ");
-            }
+            write( i, " / ", c , ": Moving a particle ... ");
 
             // until we move a particle in the right direction so the total potential of system does not decrease,
             // we should continue the search.
@@ -182,15 +179,9 @@ class Simulation
                 }
             }
 
-
-            if( (i % 100) == 0 )
-            {
-                writeln("OK");
-
-                writeln("Current system potential is ", currentTotalPotential);
-
-                writeln();
-            }
+            writeln("OK");
+            writeln("Current system potential is ", currentTotalPotential);
+            writeln();
 
             if( minTotalPotential > currentTotalPotential ){ minTotalPotential = currentTotalPotential; }
         }
